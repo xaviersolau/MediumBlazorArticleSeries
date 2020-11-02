@@ -1,0 +1,13 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<Component1 ParentName="ClientSideAppIndex" @bind-Text="_text"></Component1>
+
+The text is : @_text
+
+@code {
+    private string _text = "default text...";
+}
