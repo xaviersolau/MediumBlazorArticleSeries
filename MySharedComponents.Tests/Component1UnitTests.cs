@@ -7,6 +7,7 @@ using Microsoft.JSInterop;
 using Moq;
 using Xunit;
 using static Bunit.ComponentParameterFactory;
+using static MySharedComponents.ElementIds;
 
 namespace MySharedComponents.Tests
 {
@@ -32,7 +33,7 @@ namespace MySharedComponents.Tests
             //    });
 
             // Assert: first find the parent_name strong element, then verify its content.
-            Assert.Equal(someValue, renderedComponent.Find("#parent-name").TextContent);
+            Assert.Equal(someValue, renderedComponent.Find(CssSelector(ParentNameId)).TextContent);
         }
 
         [Fact]
@@ -46,7 +47,7 @@ namespace MySharedComponents.Tests
             // Mock JsRunTime that will return Text new value.
             var jsrMock = new Mock<IJSRuntime>();
             jsrMock
-                .Setup(r => r.InvokeAsync<string>("exampleJsFunctions.showPrompt", It.IsAny<object[]>()))
+                .Setup(r => r.InvokeAsync<string>(ExampleJsInterop.JsShowPromptIdentifier, It.IsAny<object[]>()))
                 .ReturnsAsync(() => newValue);
 
             // Register the jsrMock as singleton.
@@ -65,7 +66,7 @@ namespace MySharedComponents.Tests
                 });
 
             // Assert: first find the <text> element, then verify its initial content.
-            Assert.Equal(someValue, renderedComponent.Find("#text-value").TextContent);
+            Assert.Equal(someValue, renderedComponent.Find(CssSelector(TextValueId)).TextContent);
 
             Assert.Equal(someValue, renderedComponent.Instance.Text);
 
@@ -76,7 +77,7 @@ namespace MySharedComponents.Tests
             await renderedComponent.Find("button").ClickAsync(new MouseEventArgs());
 
             // Assert: find the <text> element with its ID, then verify its content.
-            Assert.Equal(newValue, renderedComponent.Find("#text-value").TextContent);
+            Assert.Equal(newValue, renderedComponent.Find(CssSelector(TextValueId)).TextContent);
 
             // Assert: verify the component property has been updated.
             Assert.Equal(newValue, renderedComponent.Instance.Text);
