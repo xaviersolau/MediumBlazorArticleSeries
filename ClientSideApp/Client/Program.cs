@@ -1,6 +1,7 @@
 using System;
 using System.Net.Http;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Threading.Tasks;
 using System.Text;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -18,7 +19,15 @@ namespace ClientSideApp.Client
             builder.RootComponents.Add<App>("app");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-            builder.Services.AddLocalization();
+            builder.Services.AddLocalization(options=>
+            {
+                options.ResourcesPath = "Resources";
+            });
+
+            //var culture = new CultureInfo("en");
+            //CultureInfo.DefaultThreadCurrentCulture = culture;
+            //CultureInfo.DefaultThreadCurrentUICulture = culture;
+
             await builder.Build().RunAsync();
         }
     }

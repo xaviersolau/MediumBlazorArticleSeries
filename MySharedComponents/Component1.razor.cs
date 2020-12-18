@@ -10,6 +10,10 @@ namespace MySharedComponents
 {
     public partial class Component1
     {
+        public const string Body = nameof(Body);
+        public const string ClickMe = nameof(ClickMe);
+        public const string EnterSomeText = nameof(EnterSomeText);
+
         [Parameter]
         public string ParentName { get; set; }
 
@@ -22,14 +26,15 @@ namespace MySharedComponents
         [Inject]
         private IJSRuntime JsRuntime { get; set; }
 
-        //[Inject]
-        //private IStringLocalizer<Resources.MySharedComponents> L { get; set; }
+        [Inject]
+        private IStringLocalizer<Component1> L { get; set; }
 
         private async Task GetTextAsync()
         {
-            //var text = await ExampleJsInterop.Prompt(JsRuntime, L[Resources.MySharedComponents.EnterSomeText], Text);
-            var text = await ExampleJsInterop.Prompt(JsRuntime, Resources.MySharedComponents.EnterSomeText, Text);
+            var localizedText = L[EnterSomeText];
 
+            var text = await ExampleJsInterop.Prompt(JsRuntime, localizedText, Text);
+            
             await TextChanged.InvokeAsync(text);
 
             Text = text;

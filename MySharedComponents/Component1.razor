@@ -1,8 +1,11 @@
 ﻿
 <div class="my-component">
-    This Blazor component is defined in the <strong>MySharedComponents</strong> package and it is used from <strong id="@ElementIds.ParentNameId">@ParentName</strong>.
+    <div>
+        @L.Html(Body, "MySharedComponents", ElementIds.ParentNameId, ParentName)
+    </div>
+    
     <br>
-    <button class="btn btn-primary" @onclick="GetTextAsync">Click me</button>
+    <button class="btn btn-primary" @onclick="GetTextAsync">@L[ClickMe]</button>
     <br>
     <text>Text : <span id="@ElementIds.TextValueId">@Text</span></text>
 </div>

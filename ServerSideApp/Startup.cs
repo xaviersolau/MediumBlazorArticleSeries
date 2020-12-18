@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -27,7 +28,17 @@ namespace ServerSideApp
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddLocalization();
+            services.AddLocalization(options =>
+            {
+                options.ResourcesPath = "Resources";
+            });
+
+            var supportedCultures = new List<CultureInfo> { new CultureInfo("en"), new CultureInfo("fr") };
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("en");
+                options.SupportedUICultures = supportedCultures;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +54,8 @@ namespace ServerSideApp
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseRequestLocalization();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
