@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Body" xml:space="preserve">
-    <value>Ce composant Blazor est définit dans le package &lt;strong&gt;{0}&lt;/strong&gt; et il est utilisé par &lt;strong id="{1}"&gt;{2}&lt;/strong&gt;.</value>
+    <value>Ce composant Blazor est défini dans le package &lt;strong&gt;{0}&lt;/strong&gt; et il est utilisé par &lt;strong id="{1}"&gt;{2}&lt;/strong&gt;.</value>
   </data>
   <data name="ClickMe" xml:space="preserve">
     <value>Cliquez içi!</value>
