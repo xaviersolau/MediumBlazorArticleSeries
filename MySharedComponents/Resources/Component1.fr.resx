@@ -121,7 +121,7 @@
     <value>Ce composant Blazor est défini dans le package &lt;strong&gt;{0}&lt;/strong&gt; et il est utilisé par &lt;strong id="{1}"&gt;{2}&lt;/strong&gt;.</value>
   </data>
   <data name="ClickMe" xml:space="preserve">
-    <value>Cliquez içi!</value>
+    <value>Cliquez ici !</value>
   </data>
   <data name="EnterSomeText" xml:space="preserve">
     <value>Saisissez un texte :</value>
