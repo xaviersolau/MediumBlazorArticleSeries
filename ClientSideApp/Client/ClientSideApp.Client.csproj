@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\JsonLocalizer\JsonLocalizer.csproj" />
     <ProjectReference Include="..\..\MySharedComponents\MySharedComponents.csproj" />
   </ItemGroup>
 

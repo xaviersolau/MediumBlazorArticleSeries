@@ -16,7 +16,7 @@ namespace MySharedComponents.Tests
     public class Component1UnitTests
     {
         [Fact]
-        public async Task ItShouldDisplayTheParentName()
+        public void ItShouldDisplayTheParentName()
         {
             var someValue = "Here is the parent name value";
 

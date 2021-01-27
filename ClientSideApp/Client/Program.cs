@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 using System.Text;
+using JsonLocalizer;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 
 namespace ClientSideApp.Client
@@ -27,6 +29,8 @@ namespace ClientSideApp.Client
             //var culture = new CultureInfo("en");
             //CultureInfo.DefaultThreadCurrentCulture = culture;
             //CultureInfo.DefaultThreadCurrentUICulture = culture;
+
+            builder.Services.AddSingleton<IStringLocalizerFactory, JsonStringLocalizerFactory>();
 
             await builder.Build().RunAsync();
         }
