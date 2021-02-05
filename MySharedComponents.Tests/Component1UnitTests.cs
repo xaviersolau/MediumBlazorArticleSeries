@@ -40,7 +40,7 @@ namespace MySharedComponents.Tests
         }
 
         [Fact]
-        public async Task ItShouldTriggerTheTextChangedEventWhenUserClickOnButton()
+        public void ItShouldTriggerTheTextChangedEventWhenUserClickOnButton()
         {
             var newValue = "Test new value";
 
@@ -79,7 +79,7 @@ namespace MySharedComponents.Tests
 
             // Find and click the <button> element to set the
             // text element value from the jsRuntime mock value.
-            await renderedComponent.Find("button").ClickAsync(new MouseEventArgs());
+            renderedComponent.Find("button").Click(new MouseEventArgs());
 
             // Assert: verify that the event has been triggered with the new text value.
             Assert.NotNull(textChangedEventTriggered);
@@ -87,7 +87,7 @@ namespace MySharedComponents.Tests
         }
 
         [Fact]
-        public async Task ItShouldDisplayTextFromJsRunTimeOnClick()
+        public void ItShouldDisplayTextFromJsRunTimeOnClick()
         {
             var someValue = "initial value...";
             var newValue = "Test new value";
@@ -125,7 +125,7 @@ namespace MySharedComponents.Tests
 
             // Find and click the <button> element to set the
             // text element value from the jsRuntime mock value.
-            await renderedComponent.Find("button").ClickAsync(new MouseEventArgs());
+            renderedComponent.Find("button").Click(new MouseEventArgs());
 
             // Assert: find the <text> element with its ID, then verify its content.
             Assert.Equal(newValue, renderedComponent.Find(CssSelector(TextValueId)).TextContent);
