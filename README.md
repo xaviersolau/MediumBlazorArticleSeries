@@ -5,6 +5,12 @@
 
 Code base used for a Blazor article series on medium.
 
-https://medium.com/younited-tech-blog/write-a-reusable-blazor-component-756d6f094b4a
+* [Write a reusable Blazor component](https://medium.com/younited-tech-blog/write-a-reusable-blazor-component-756d6f094b4a)
 
-https://medium.com/younited-tech-blog/unit-test-a-blazor-component-729eec4eab01
+* [Unit test a Blazor component](https://medium.com/younited-tech-blog/unit-test-a-blazor-component-729eec4eab01)
+
+* [Localization of a Blazor component](https://medium.com/younited-tech-blog/localization-of-a-blazor-component-2178aa855ded)
+
+* JSON based Blazor localization
+
+* Coming soon: How to setup your Blazor component Layout
