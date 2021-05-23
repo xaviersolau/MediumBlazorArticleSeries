@@ -13,7 +13,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientSideApp.Client", "Cli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySharedComponents.Tests", "MySharedComponents.Tests\MySharedComponents.Tests.csproj", "{E040A8AE-1792-461A-85F4-58E432CAE7D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonLocalizer", "JsonLocalizer\JsonLocalizer.csproj", "{D05ABF42-1273-470D-BED5-67222E6CC4BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonLocalizer", "JsonLocalizer\JsonLocalizer.csproj", "{D05ABF42-1273-470D-BED5-67222E6CC4BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{E60CAE66-0D52-47E8-A134-A935079705C5}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{62ED4943-B10B-453B-9EE4-0CCD57E5C496}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build-ci.yml = .github\workflows\build-ci.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
