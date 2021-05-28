@@ -1,0 +1,27 @@
+﻿@page "/dock"
+
+<DockContainer Fill="Fill.Full" Proportion="25" Style="background-color:burlywood;">
+
+    <DockPanel Class="px-4" Side="@SelectedSideValue" Style="background-color:cadetblue;">
+        This is the DockPanel placed on the DockContainer @SelectedSideValue side.
+    </DockPanel>
+
+    <p class="px-4" >
+        <h4>Hello, this is a DockContainer!</h4>
+
+        Please select the Side parameter:
+
+        <select @bind="@SelectedSideValue">
+
+            <option value="@Side.Left">Left</option>
+            <option value="@Side.Top">Top</option>
+            <option value="@Side.Right">Right</option>
+            <option value="@Side.Bottom">Bottom</option>
+
+        </select>
+    </p>
+</DockContainer>
+
+@code {
+    private Side SelectedSideValue { get; set; } = Side.Left;
+}

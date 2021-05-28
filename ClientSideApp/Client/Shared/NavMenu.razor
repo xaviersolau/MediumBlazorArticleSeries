@@ -6,7 +6,9 @@
 </div>
 
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <ul class="nav flex-column">
+    @* We can remove the "flex-column" class from *@
+    @* our nav menu ul element. *@
+    <ul class="nav">
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Home
@@ -15,6 +17,21 @@
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="counter">
                 <span class="oi oi-plus" aria-hidden="true"></span> Counter
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="container">
+                <span class="oi oi-media-stop" aria-hidden="true"></span> Container
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="dock">
+                <span class="oi oi-paperclip" aria-hidden="true"></span> Dock
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="grid">
+                <span class="oi oi-grid-three-up" aria-hidden="true"></span> Grid
             </NavLink>
         </li>
     </ul>

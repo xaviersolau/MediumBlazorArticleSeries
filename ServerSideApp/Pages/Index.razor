@@ -1,15 +1,19 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
+<div class="px-4">
 
-Welcome to your new app.
+    <h1>Hello, world!</h1>
 
-<Component1
-    ParentName="ParentName property value set from the ServerSideApp."
-    @bind-Text="_text">
-</Component1>
+    Welcome to your new app.
 
-The text is : @_text
+    <Component1
+        ParentName="ParentName property value set from the ServerSideApp."
+        @bind-Text="_text">
+    </Component1>
+
+    The text is : @_text
+
+</div>
 
 @code {
     private string _text = "default text...";

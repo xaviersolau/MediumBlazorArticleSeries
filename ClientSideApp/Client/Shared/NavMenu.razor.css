@@ -1,5 +1,11 @@
 ﻿.navbar-toggler {
     background-color: rgba(255, 255, 255, 0.1);
+    display: none; /* Added line */
+}
+
+/* Don't need to collapse so just display as block */
+.collapse {
+    display: block;
 }
 
 .top-row {
@@ -23,13 +29,15 @@
     padding-bottom: 0.5rem;
 }
 
-.nav-item:first-of-type {
+/* Don't need this because the menu will */
+/* be in-lined on small screen:          */
+/*.nav-item:first-of-type {
     padding-top: 1rem;
 }
 
 .nav-item:last-of-type {
     padding-bottom: 1rem;
-}
+}*/
 
 .nav-item ::deep a {
     color: #d7d7d7;
@@ -50,13 +58,13 @@
     color: white;
 }
 
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
     .navbar-toggler {
         display: none;
     }
 
-    .collapse {
+    .collapse {*/
         /* Never collapse the sidebar for wide screens */
-        display: block;
+        /*display: block;
     }
-}
+}*/

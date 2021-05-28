@@ -1,0 +1,23 @@
+﻿
+@page "/container"
+
+<BoxContainer Class="px-4" Fill="@SelectedFillValue" Style="background-color:burlywood;">
+
+    <h4>Hello, this is a BoxContainer!</h4>
+
+    Please select the fill parameter:
+
+    <select @bind="@SelectedFillValue">
+
+        <option value="@Fill.Full">Full</option>
+        <option value="@Fill.Horizontal">Horizontal</option>
+        <option value="@Fill.Vertical">Vertical</option>
+        <option value="@Fill.None">None</option>
+
+    </select>
+
+</BoxContainer>
+
+@code {
+    private Fill SelectedFillValue { get; set; } = Fill.Full;
+}

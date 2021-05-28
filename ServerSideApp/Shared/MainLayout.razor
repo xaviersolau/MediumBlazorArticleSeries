@@ -1,18 +1,21 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <div class="main">
+<ResponsiveLayout>
+    @* Here is your navigation menu *@
+    <NavigationMenu>
+        <div class="sidebar">
+            <NavMenu />
+        </div>
+    </NavigationMenu>
+    @* Here is your header *@
+    <Header>
         <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            <a href="https://docs.microsoft.com/aspnet/"
+               target="_blank">About</a>
         </div>
-
-        <div class="content px-4">
-            @Body
-        </div>
-    </div>
-</div>
+    </Header>
+    @* And finally you application Body *@
+    <ChildContent>
+        @Body
+    </ChildContent>
+</ResponsiveLayout>
