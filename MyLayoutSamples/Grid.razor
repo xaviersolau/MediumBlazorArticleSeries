@@ -1,0 +1,125 @@
+﻿
+@page "/grid"
+
+<GridContainer Fill="Fill.Full" Style="background-color:burlywood;">
+
+    @* Let's create a first column sized to 25% of the parent container. *@
+    <GridColumn Sizing="Sizing.Proportion" Size="25" />
+
+    @* Then create a middle column that will use all remaining space. *@
+    <GridColumn Sizing="Sizing.Fill" />
+
+    @* Finally create a last column sized to 25% of the parent container. *@
+    <GridColumn Sizing="Sizing.Proportion" Size="25" />
+
+    @* Now we are going to create 3 rows using the Repeat property. *@
+    <GridRow Sizing="Sizing.Fill" Repeat="3" />
+
+    @* Well, we can just add a cell that we will place dynamically from a user input. *@
+    <GridCell Column="@ColumnIndex" ColumnEnd="@ColumnEndIndex" Row="@RowIndex" RowEnd="@RowEndIndex" Class="px-4" Style="background-color:cadetblue;">
+        <EditForm Model="@this">
+            <GridContainer Fill="Fill.Full">
+                @* The grid structure *@
+                <GridColumn Sizing="Sizing.Content" />
+                <GridColumn Sizing="Sizing.Fill" />
+                <GridRow Sizing="Sizing.Content" Repeat="5" />
+
+                @* The grid cells *@
+                <GridCell Column="0" ColumnEnd="1" Row="0">
+                    Here is a GridCell that we place on (@ColumnIndex..@ColumnEndIndex/@RowIndex..@RowEndIndex) coordinate.
+                </GridCell>
+
+                <GridCell Column="0" Row="1">
+                    Column
+                </GridCell>
+                <GridCell Column="1" Row="1">
+                    <InputNumber style="width:100%;" @bind-Value="ColumnIndex" />
+                </GridCell>
+
+                <GridCell Column="0" Row="2">
+                    ColumnEnd
+                </GridCell>
+                <GridCell Column="1" Row="2">
+                    <InputNumber style="width:100%;" @bind-Value="ColumnEndIndex" />
+                </GridCell>
+                <GridCell Column="0" Row="3">
+                    Row
+                </GridCell>
+                <GridCell Column="1" Row="3">
+                    <InputNumber style="width:100%;" @bind-Value="RowIndex" />
+                </GridCell>
+                <GridCell Column="0" Row="4">
+                    RowEnd
+                </GridCell>
+                <GridCell Column="1" Row="4">
+                    <InputNumber style="width:100%;" @bind-Value="RowEndIndex" />
+                </GridCell>
+
+            </GridContainer>
+        </EditForm>
+    </GridCell>
+
+</GridContainer>
+
+@code {
+
+    private int columnIndex = 0;
+    private int columnEndIndex = 1;
+    private int rowIndex = 0;
+    private int rowEndIndex = 1;
+
+    public int ColumnIndex
+    {
+        get => columnIndex;
+        set
+        {
+            if (value >= 0 && value < 3)
+            {
+                columnIndex = value;
+
+                if (columnIndex > columnEndIndex)
+                {
+                    columnEndIndex = columnIndex;
+                }
+            }
+        }
+    }
+    public int ColumnEndIndex
+    {
+        get => columnEndIndex;
+        set
+        {
+            if (value >= 0 && value < 3 && value >= columnIndex)
+            {
+                columnEndIndex = value;
+            }
+        }
+    }
+    public int RowIndex
+    {
+        get => rowIndex;
+        set
+        {
+            if (value >= 0 && value < 3)
+            {
+                rowIndex = value;
+
+                if (rowIndex > rowEndIndex)
+                {
+                    rowEndIndex = rowIndex;
+                }
+            }
+        }
+    }
+    public int RowEndIndex
+    {
+        get => rowEndIndex;
+        set
+        {
+            if (value >= 0 && value < 3 && value >= rowIndex)
+            {
+                rowEndIndex = value;
+            }
+        }
+    }
+}
