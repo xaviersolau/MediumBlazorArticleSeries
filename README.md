@@ -13,4 +13,4 @@ Code base used for a Blazor article series on medium.
 
 * [JSON based Blazor localization](https://medium.com/younited-tech-blog/json-based-blazor-localization-395b1b31e8ae)
 
-* Coming soon: How to setup your Blazor component Layout
+* [How to setup your Blazor component Layout](https://medium.com/younited-tech-blog/how-to-setup-your-blazor-component-layout-12fa02039cfe)
